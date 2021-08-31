@@ -98,8 +98,18 @@ class TodoController extends Controller
     public function destroy($id)
     {
 
-        $task = todo::find($id);
-        $task->delete();
+        $tasks = task::where('todo_id', '=', $id)->latest()->get();
+
+        foreach ($tasks as $task) {
+            $task->delete();
+        }
+        $todo = todo::find($id);
+        $todo->delete();
+
+
+
         return ['message'=>'delete'];
+
+
     }
 }

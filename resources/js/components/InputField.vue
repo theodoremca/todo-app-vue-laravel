@@ -30,6 +30,7 @@ export default {
             return;
         }
       this.$emit("add", this.text);
+        this.text = '';
     },
   },
 };

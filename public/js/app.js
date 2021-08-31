@@ -1877,6 +1877,7 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.$emit("add", this.text);
+      this.text = '';
     }
   }
 });
